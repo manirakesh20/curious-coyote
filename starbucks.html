@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Diwali Campaign Storyboard</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 0; 
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            color: #006241; 
+            text-align: center; 
+            padding: 20px;
+            margin: 0;
+            background-color: #f8f8f8;
+        }
+        .scene { 
+            display: none; 
+            padding: 20px; 
+            text-align: center;
+        }
+        .scene.active { 
+            display: block; 
+        }
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .nav-container { 
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+        }
+        .nav-button { 
+            background-color: #00a862; 
+            color: white; 
+            border: none; 
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; 
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-button:hover { 
+            background-color: #008248; 
+        }
+        .scene-counter { 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Starbucks Diwali Campaign Storyboard</h1>
+
+        <div id="scene1" class="scene active">
+            <h2>Opening Scene</h2>
+            <img src="/Users/rakesh/Downloads/AI Art Generator.jpg" alt="Opening Scene">
+            <p>Ninad (24-25) on balcony watching fireworks, gets video call from friends in Mumbai</p>
+        </div>
+
+        <div id="scene2" class="scene">
+            <h2>Family Conversation</h2>
+            <img src="/Users/rakesh/Downloads/AI Art Generator (1).jpg" alt="Family Conversation">
+            <p>Ninad approaches parents having a hushed, concerned conversation</p>
+        </div>
+
+        <div id="scene3" class="scene">
+            <h2>Ninad's Suggestion</h2>
+            <img src="/Users/rakesh/Downloads/AI Art Generator (2).jpg" alt="Ninad's Suggestion">
+            <p>Ninad suggests celebrating Diwali outside, parents look apprehensive</p>
+        </div>
+
+        <div id="scene4" class="scene">
+            <h2>Ninad's Solution</h2>
+            <img src="/Users/rakesh/Downloads/AI Art Generator (10).jpg" alt="Ninad's Solution">
+            <p>Ninad smiles, texts address of his 'special place' to family</p>
+        </div>
+
+        <div id="scene5" class="scene">
+            <h2>Arrival at Starbucks</h2>
+            <img src="/Users/rakesh/Downloads/AI Art Generator (4).jpg" alt="Arrival at Starbucks">
+            <p>Family enters Starbucks, surprised by Diwali decorations</p>
+        </div>
+
+        <div id="scene6" class="scene">
+            <h2>Family Gathering</h2>
+            <img src="/Users/rakesh/Downloads/AI Art Generator (8).jpg" alt="Family Gathering">
+            <p>Relatives arrive, impressed by the venue</p>
+        </div>
+
+        <div id="scene7" class="scene">
+            <h2>Personalized Orders</h2>
+            <img src="/Users/rakesh/Downloads/AI Art Generator (5).jpg" alt="Personalized Orders">
+            <p>Barista calls out customized Diwali-themed orders</p>
+        </div>
+
+        <div id="scene8" class="scene">
+            <h2>Family Enjoyment</h2>
+            <img src="/Users/rakesh/Downloads/AI Art Generator (9).jpg" alt="Family Enjoyment">
+            <p>Family spread out in Starbucks, enjoying themselves</p>
+        </div>
+
+        <div id="scene9" class="scene">
+            <h2>More Guests Arrive</h2>
+            <img src="/Users/rakesh/Downloads/AI Art Generator (11).jpg" alt="More Guests Arrive">
+            <p>Ninad gets a call, ushers in more unannounced relatives</p>
+        </div>
+
+        <div id="scene10" class="scene">
+            <h2>Heartwarming Moment</h2>
+            <img src="/Users/rakesh/Downloads/AI Art Generator (7).jpg" alt="Heartwarming Moment">
+            <p>Ninad playfully feeds his mother a Diwali treat, father smiles</p>
+        </div>
+
+        <div id="scene11" class="scene">
+            <h2>Closing Shot</h2>
+            <img src="/Users/rakesh/Downloads/AI Art Generator (3).jpg" alt="Closing Shot">
+            <p>Screen blurs with family in background, superimposed text</p>
+        </div>
+
+        <div id="scene12" class="scene">
+            <h2>End Slate</h2>
+            <img src="/Users/rakesh/Downloads/Blue Modern Vlog Thumbnail.png" alt="End Slate">
+            <p>Hashtag changes into multiple languages, Starbucks logo appears</p>
+        </div>
+
+        <div class="nav-container">
+            <button id="prevBtn" class="nav-button">←</button>
+            <div class="scene-counter">Scene <span id="currentScene">1</span> of 12</div>
+            <button id="nextBtn" class="nav-button">→</button>
+        </div>
+    </div>
+
+    <script>
+        const scenes = document.querySelectorAll('.scene');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const currentSceneSpan = document.getElementById('currentScene');
+        let currentSceneIndex = 0;
+
+        function showScene(index) {
+            scenes.forEach((scene, i) => {
+                scene.classList.toggle('active', i === index);
+            });
+            currentSceneSpan.textContent = index + 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSceneIndex = (currentSceneIndex - 1 + scenes.length) % scenes.length;
+            showScene(currentSceneIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSceneIndex = (currentSceneIndex + 1) % scenes.length;
+            showScene(currentSceneIndex);
+        });
+    </script>
+</body>
+</html>
