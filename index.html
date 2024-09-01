@@ -5,13 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curious Coyote</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1 0 auto;
             max-width: 800px;
+            width: 100%;
             margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
         }
         h1 {
             margin-bottom: 5px;
@@ -50,45 +61,43 @@
             flex-shrink: 0;
             margin-left: 15px;
         }
-       .footer {
+        .footer {
+            flex-shrink: 0;
             background-color: #f8f8f8;
             border-top: 1px solid #e7e7e7;
             padding: 20px;
             text-align: left;
             font-size: 0.8em;
-            margin-top: 60px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1><a href="#" style="text-decoration: none; color: inherit;">Curious Coyote</a></h1>
-        Full time content consumer <br>
-        Summarising to help you save time
-    </header>
-
-    <main>
-        <div class="year">2024</div>
-        
-        <div class="post">
-            <span class="post-title"><a href="Bikanerwala.html">Tu janta hai Bikanerwala ka maalik kaun hai?
-</a></span>
-            <span class="post-date">August 29</span>
-        </div>
-
-        <div class="post">
-            <span class="post-title"><a href="#">(test) Higher Levels of Abstraction</a></span>
-            <span class="post-date">August 26</span>
-        </div>
-
-        <div class="post">
-            <span class="post-title"><a href="#">(Test) What Has Your GPU Done For You Today?</a></span>
-            <span class="post-date">August 23</span>
-        </div>
-  <footer class="footer">
+    <div class="content">
+        <header>
+            <h1><a href="#" style="text-decoration: none; color: inherit;">Curious Coyote</a></h1>
+            Full time content consumer <br>
+            Summarising to help you save time
+        </header>
+        <main>
+            <div class="year">2024</div>
+            
+            <div class="post">
+                <span class="post-title"><a href="Bikanerwala.html">Tu janta hai Bikanerwala ka maalik kaun hai?</a></span>
+                <span class="post-date">August 29</span>
+            </div>
+            <div class="post">
+                <span class="post-title"><a href="#">(test) Higher Levels of Abstraction</a></span>
+                <span class="post-date">August 26</span>
+            </div>
+            <div class="post">
+                <span class="post-title"><a href="#">(Test) What Has Your GPU Done For You Today?</a></span>
+                <span class="post-date">August 23</span>
+            </div>
+            <!-- Add more posts as needed -->
+        </main>
+    </div>
+    <footer class="footer">
         Inspired by <a href="https://tomtunguz.com/">Tomasz Tunguz</a>'s personal website
     </footer>
-        <!-- Add more posts as needed -->
-    </main>
 </body>
 </html>
